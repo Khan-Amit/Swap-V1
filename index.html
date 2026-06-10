@@ -2,64 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWAP-V1 // TRANSWARP ENGINE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SWAP-V1 // TRANSWARP ENGINE CORE</title>
     <style>
+        /* --- CORE STARFLEET DESIGN MATRIX --- */
         body {
             background-color: #000000;
             color: #FFFFFF;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 16px;
+            padding: 12px;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
+
+        /* --- MASSIVE SPACESHIP VISUAL HEADER --- */
+        .spaceship-viewport {
+            width: 100%;
+            background: linear-gradient(180deg, #001122 0%, #000000 100%);
+            border: 2px solid #3366CC;
+            border-radius: 12px;
+            padding: 16px 0;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 15px rgba(51, 102, 204, 0.4);
+            overflow: hidden;
+        }
+        .spaceship-art {
+            font-size: 42px;
+            margin: 0;
+            filter: drop-shadow(0 0 8px #00FFFF);
+            animation: warpVibration 1.5s infinite alternate;
+        }
+        @keyframes warpVibration {
+            0% { transform: translateY(0px) scale(1); }
+            100% { transform: translateY(-4px) scale(1.05); }
+        }
+        .warp-field-lines {
+            color: #00FFFF;
+            font-size: 10px;
+            letter-spacing: 6px;
+            opacity: 0.6;
+            margin: 4px 0;
+        }
+
+        /* --- LCARS COMPUTER HEADER --- */
         .lcars-header {
             display: flex;
             align-items: flex-end;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
         .lcars-bar-left {
-            width: 35px;
-            height: 60px;
+            width: 45px;
+            height: 65px;
             background-color: #99CCFF;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-            margin-right: 6px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            margin-right: 8px;
         }
         .system-title {
             flex: 1;
         }
         .system-sub-text {
             color: #99CCFF;
-            font-size: 10px;
-            letter-spacing: 2px;
+            font-size: 9px;
+            letter-spacing: 3px;
+            font-weight: bold;
         }
         .system-title-text {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             margin: 0;
+            color: #FFFFFF;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5);
         }
         .lcars-bar-right {
-            height: 40px;
+            height: 42px;
             background-color: #FF9900;
-            padding: 0 12px;
+            padding: 0 14px;
             display: flex;
             align-items: center;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
             color: #000000;
             font-weight: bold;
             font-size: 11px;
         }
+
+        /* --- TELEMETRY PROFILE DATA PODS --- */
         .panel {
             display: flex;
-            background-color: #111122;
-            border-radius: 8px;
+            background-color: #0a0a14;
+            border-radius: 10px;
             margin-bottom: 16px;
             overflow: hidden;
-            border: 1px solid #333355;
+            border: 1px solid #222244;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
         }
         .panel-indicator {
-            width: 12px;
+            width: 14px;
         }
         .panel-body {
             flex: 1;
@@ -68,61 +111,125 @@
         .row {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #222244;
-            padding-bottom: 6px;
+            border-bottom: 1px solid #1a1a33;
+            padding-bottom: 8px;
+            align-items: center;
         }
         .section-header {
             color: #8888AA;
             font-size: 11px;
             font-weight: bold;
+            letter-spacing: 1px;
         }
         .status-text {
             color: #00FF00;
             font-size: 10px;
             font-weight: bold;
+            background-color: rgba(0, 255, 0, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
         }
         .label {
-            color: #666688;
+            color: #555577;
             font-size: 9px;
-            margin-top: 8px;
+            margin-top: 10px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
         }
         .value-text {
-            font-size: 15px;
+            font-size: 16px;
+            color: #FFFFFF;
+            margin-top: 2px;
         }
         .account-number {
             color: #00FFFF;
             font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 2px;
+            word-break: break-all;
         }
         .balance-text {
-            font-size: 22px;
+            font-size: 26px;
             font-weight: bold;
-            margin-top: 2px;
+            margin-top: 4px;
         }
+
+        /* --- INTER-SECTOR BRIDGE VISUAL --- */
         .bridge {
             text-align: center;
-            padding: 8px;
-            background-color: #001133;
-            border: 1px solid #002266;
-            border-radius: 4px;
+            padding: 10px;
+            background-color: #000c1a;
+            border: 1px solid #003366;
+            border-radius: 6px;
             color: #00FFFF;
             font-size: 11px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* --- FUTURISTIC TREKKY CONTROL BUTTONS --- */
+        .control-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+            gap: 12px;
+        }
+        .trekky-btn {
+            flex: 1;
+            height: 48px;
+            border: none;
+            border-radius: 24px; /* Distinctive LCARS Capsule Shape */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            font-weight: bold;
+            color: #000000;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+        }
+        .trekky-btn:active {
+            transform: scale(0.95);
+            filter: brightness(1.3);
+        }
+        .btn-blue { background-color: #3366CC; }
+        .btn-orange { background-color: #FF9900; }
+        .btn-pink { background-color: #CC6699; color: #FFFFFF; }
+
+        /* --- CONSOLE LOG OUTPUT TERMINAL --- */
+        .terminal-log {
+            margin-top: 20px;
+            background-color: #050505;
+            border: 1px dashed #3366CC;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 10px;
+            color: #8888AA;
+            min-height: 35px;
         }
     </style>
 </head>
 <body>
 
-    <!-- LCARS SYSTEM HEADER -->
+    <!-- MASSIVE SPACESHIP VISUAL HEADER -->
+    <div class="spaceship-viewport">
+        <div class="warp-field-lines">&lt;&lt;&lt; WARP BRIDGE SPEED SECURED &gt;&gt;&gt;</div>
+        <div class="spaceship-art">🛸💨✨</div>
+        <div class="system-sub-text" style="color: #00FFFF; margin-top: 6px;">USS ENTERPRISE // NCC-1701-E</div>
+    </div>
+
+    <!-- LCARS MASTER CONSOLE HEADER -->
     <div class="lcars-header">
         <div class="lcars-bar-left"></div>
         <div class="system-title">
             <div class="system-sub-text">SUB-SPACE QUANTUM NETWORK</div>
-            <h1 class="system-title-text">SWAP-V1 // TRANSWARP ENGINE</h1>
+            <h1 class="system-title-text">SWAP-V1 // TRANSWARP</h1>
         </div>
         <div class="lcars-bar-right">SD 2026.161</div>
     </div>
 
-    <!-- SENDER PROFILE -->
+    <!-- SENDER PROFILE (EUROPE) -->
     <div class="panel">
         <div class="panel-indicator" style="background-color: #FF9900;"></div>
         <div class="panel-body">
@@ -130,34 +237,55 @@
                 <span class="section-header">[ SENDER PROFILE / SECTOR 01 ]</span>
                 <span class="status-text">FEDERATION_VERIFIED</span>
             </div>
+            
             <div class="label">IDENTITY NAME:</div>
-            <div class="value-text">CADET JANE DOE</div>
-            <div class="label">ROUTING ROUTE (IBAN):</div>
-            <div class="account-number">DE89 3704 0044 1234 5678 90</div>
+            <div class="value-text">YOUR NAME HERE</div> <!-- ⬅️ EDIT YOUR NAME HERE -->
+            
+            <div class="label">ROUTING ROUTE (GERMAN IBAN):</div>
+            <div class="account-number">DE89 3704 0044 1234 5678 90</div> <!-- ⬅️ EDIT YOUR GERMAN IBAN HERE -->
+            
             <div class="label">LIQUID ENERGY RESERVES:</div>
             <div class="balance-text" style="color: #FF9900;">4,250.00 EUR</div>
         </div>
     </div>
 
-    <!-- SUB-SPACE BRIDGE VISUAL -->
-    <div class="bridge">🛸 SUBSYSTEM BRIDGE ENGAGED // EUR ➡️ THB</div>
+    <!-- SUB-SPACE LINK TUNNEL -->
+    <div class="bridge">🖖 TRANSWARP CONDUIT STABLE // EUR ➡️ THB</div>
 
-    <!-- RECEIVER PROFILE -->
+    <!-- RECEIVER PROFILE (THAILAND) -->
     <div class="panel">
         <div class="panel-indicator" style="background-color: #CC6699;"></div>
         <div class="panel-body">
             <div class="row">
                 <span class="section-header">[ RECEIVER PROFILE / DELTA QUADRANT ]</span>
-                <span class="status-text">SECTOR_ACTIVE</span>
+                <span class="status-text" style="color:#00FFFF; background-color:rgba(0,255,255,0.1);">SECTOR_ACTIVE</span>
             </div>
+            
             <div class="label">DESTINATION NAME:</div>
-            <div class="value-text">CADET JANE DOE</div>
-            <div class="label">PROMPTPAY MATRIX ID:</div>
-            <div class="account-number">081-234-5678 (THAI BANK)</div>
+            <div class="value-text">YOUR NAME HERE</div> <!-- ⬅️ EDIT YOUR NAME HERE AGAIN -->
+            
+            <div class="label">PROMPTPAY MATRIX ID (THAI ACCOUNT):</div>
+            <div class="account-number">081-234-5678</div> <!-- ⬅️ EDIT YOUR THAI PROMPTPAY NUMBER HERE -->
+            
             <div class="label">LOCAL SYSTEM CURRENCY:</div>
             <div class="balance-text" style="color: #CC6699;">15,800.00 THB</div>
         </div>
     </div>
 
-</body>
-</html>
+    <!-- INTERACTIVE TREKKY CONTROL BUTTONS -->
+    <div class="control-grid">
+        <button class="trekky-btn btn-blue" onclick="logAction('SCANNING TARGET QR... MERCHANT LINK ACQUIRED!')">SCAN QR</button>
+        <button class="trekky-btn btn-orange" onclick="logAction('INITIATING FX WARP EXCHANGE... EUR LOCKED!')">FX WARP</button>
+        <button class="trekky-btn btn-pink" onclick="logAction('ENGAGING PAYMENTS MATRIX... FUNDS SENT!')">PAY NOW</button>
+    </div>
+
+    <!-- SUB-BRIDGE ACTION TERMINAL DISPLAY -->
+    <div class="terminal-log" id="termLog">MAIN CONSOLE: Systems standby. Ready for command, Captain.</div>
+
+    <script>
+        // Interactive Audio-Visual feedback engine simulator
+        function logAction(message) {
+            const logBox = document.getElementById('termLog');
+            logBox.style.color = '#00FF00';
+            logBox.innerText = "COMMAND STATUS: " + message;
+            
