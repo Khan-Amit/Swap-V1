@@ -21,14 +21,14 @@
         .txt-red { color: #FF3333; font-weight: bold; text-shadow: 0 0 3px rgba(255, 51, 51, 0.4); }
         .txt-dim { color: #777777; font-size: 11px; }
 
-        /* --- LAYOUT WRAPPERS (HIDDEN VIA INTERACTION ENGINE) --- */
+        /* --- LAYOUT WRAPPERS --- */
         .page-container {
             display: none;
             max-width: 500px;
             margin: 0 auto;
         }
         .active-page {
-            display: block;
+            display: block !important;
         }
 
         /* --- BRAND IDENTIFIER SYSTEM HEADER --- */
@@ -73,50 +73,54 @@
             background-color: #000000;
             border: 1px solid #FF3333;
             color: #FFFFFF;
-            padding: 10px;
+            padding: 12px;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
+            font-size: 16px; /* Prevents auto-zoom on iOS */
             box-sizing: border-box;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             border-radius: 4px;
         }
         .console-input:focus {
             outline: none;
-            box-shadow: 0 0 8px rgba(255, 51, 51, 0.5);
+            border-color: #FFFFFF;
         }
 
-        /* --- CAPSULE-STYLE STAR TREK ACTION SWITCHES --- */
-        .btn-layout-grid {
-            display: flex;
-            gap: 10px;
-            margin-top: 16px;
-        }
+        /* --- FIXED TACTICAL CAPSULE BUTTONS --- */
         .trek-capsule-btn {
-            flex: 1;
-            height: 46px;
+            display: block;
+            width: 100%;
+            height: 50px;
             border: 2px solid #FF3333;
             background-color: #000000;
             color: #FF3333;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 11px;
+            font-size: 14px;
             font-weight: bold;
-            letter-spacing: 1px;
-            border-radius: 23px; /* Pure Capsule Curve Perimeter */
+            letter-spacing: 2px;
+            border-radius: 25px; /* Perfect Capsule Curve */
             cursor: pointer;
             text-transform: uppercase;
-            transition: all 0.15s ease;
+            box-sizing: border-box;
+            text-align: center;
         }
         .trek-capsule-btn:active {
-            background-color: #FF3333;
-            color: #000000;
+            background-color: #FF3333 !important;
+            color: #000000 !important;
         }
         .trek-capsule-btn.solid-fill {
             background-color: #FF3333;
             color: #000000;
         }
-        .trek-capsule-btn.solid-fill:active {
-            background-color: #FFFFFF;
-            border-color: #FFFFFF;
+
+        .btn-layout-grid {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .btn-layout-grid .trek-capsule-btn {
+            flex: 1;
+            font-size: 11px;
+            height: 46px;
         }
 
         /* --- TELEMETRY READOUT MODULE --- */
@@ -149,8 +153,9 @@
             <p class="txt-dim">Input authorization passcode matrix keys to unlock multi-currency node parameters.</p>
             
             <label class="card-label txt-white" style="margin-top:16px;">ENTER ACCESS HASH KEY:</label>
-            <input type="password" id="accessPin" class="console-input" placeholder="••••••" maxlength="6">
+            <input type="tel" id="accessPin" class="console-input" placeholder="••••••" maxlength="6">
             
+            <!-- FIXED HIGH-INTENSITY INTERACTIVE RE-ROUTED BUTTON -->
             ENGAGE SYSTEMS</button>
         </div>
     </div>
@@ -165,7 +170,7 @@
                 <span class="txt-dim">SECTOR TRANS-LEDGER ACTIVE</span>
                 <h1 class="header-main-title txt-red">SWAP-V1 // COMMAND</h1>
             </div>
-            <button class="trek-capsule-btn" style="height:25px; padding:0 12px; border-radius:12px; font-size:9px;" onclick="terminateSession()">LOGOUT</button>
+            <button class="trek-capsule-btn" style="width: auto; height:28px; padding:0 12px; border-radius:14px; font-size:9px;" onclick="terminateSession()">LOGOUT</button>
         </div>
 
         <!-- SENDER SECTOR MATRIX (GERMANY BANK) -->
@@ -187,17 +192,19 @@
             <span class="txt-red card-label">[ ALPHA QUADRANT BLOCKCHAIN VAULT ]</span>
             
             <span class="txt-dim card-label">ROUTED BLOCKCHAIN NETWORK REPRINTS (3 DISTINCT WALLETS):</span>
-            <div class="card-data-field txt-white" style="font-size:11px; line-height:1.4; margin-bottom:16px;">
-                BTC NET : <span id="addrBtc" class="txt-red">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span><br>
-                ETH NET : <span id="addrEth" class="txt-red">0x71C2496A24433333333333333333333333F2B297</span><br>
-                SOL NET : <span id="addrSol" class="txt-red">GvDe76Pq9Zfgdfgjhksdfg88234jkhsdfgNmsdf1</span>
+            <div class="card-data-field txt-white" style="font-size:10px; line-height:1.4; margin-bottom:16px;">
+                BTC : <span id="addrBtc" class="txt-red">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span><br>
+                ETH : <span id="addrEth" class="txt-red">0x71C2496A24433333333333333333333333F2B297</span><br>
+                SOL : <span id="addrSol" class="txt-red">GvDe76Pq9Zfgdfgjhksdfg88234jkhsdfgNmsdf1</span>
             </div>
 
-            <span class="txt-dim card-label">DIGITAL TELEMETRY VAULT DEBITS:</span>
-            <div class="card-data-field txt-white" style="margin-bottom:0;">
-                🪙 BTC: <span id="valBtc">0.0650</span> BTC <span class="txt-dim">(≈ $4,016.54 USD)</span><br>
-                🔷 ETH: <span id="valEth">1.4580</span> ETH <span class="txt-dim">(≈ $2,336.19 USD)</span><br>
-                💜 SOL: <span id="valSol">25.000</span> SOL <span class="txt-dim">(≈ $1,604.75 USD)</span>
+            <span class="txt-dim card-label">DIGITAL QUANTUM ASSET LEDGER:</span>
+            <div class="card-data-field txt-white" style="margin-bottom:0; font-size: 13px; line-height: 1.5;">
+                🪙 BTC: <span id="valBtc">0.0650</span> BTC <span class="txt-dim">(≈ $4,016.54)</span><br>
+                🔷 ETH: <span id="valEth">1.4580</span> ETH <span class="txt-dim">(≈ $2,336.19)</span><br>
+                💜 SOL: <span id="valSol">25.000</span> SOL <span class="txt-dim">(≈ $1,604.75)</span><br>
+                🟢 USDT: <span id="valUsdt">850.00</span> USDT <span class="txt-dim">(≈ $850.00)</span><br>
+                🟡 BNB: <span id="valBnb">2.5000</span> BNB <span class="txt-dim">(≈ $1,461.25)</span>
             </div>
         </div>
 
@@ -206,7 +213,7 @@
             <span class="txt-red card-label">[ SYSTEM TRANSACTION DESK ]</span>
             
             <label class="card-label txt-white">1. SELECT TARGET ASSET ROUTE:</label>
-            <select id="assetSelect" class="console-input" style="background-image:none;">
+            <select id="assetSelect" class="console-input" style="background-color: #000000; color: #FFFFFF;">
                 <option value="EUR">EURO LIQUID CASH (EUR)</option>
                 <option value="BTC">BITCOIN TOKENS (BTC)</option>
                 <option value="ETH">ETHEREUM VALUATION (ETH)</option>
@@ -220,16 +227,5 @@
             <input type="text" id="txTarget" class="console-input" placeholder="Enter Proxy Phone, IBAN, or Hash ID">
 
             <div class="btn-layout-grid">
-                <button class="trek-capsule-btn" onclick="executeTransaction('SEND')">SEND FUNDS</button>
-                <button class="trek-capsule-btn" onclick="executeTransaction('SELL')">SELL / LIQUIDATE</button>
-            </div>
-        </div>
-
-        <!-- TELEMETRY ACTION FEEDBACK LOG -->
-        <div class="terminal-readout txt-red" id="consoleLog">SYSTEM MONITOR: Connected. Awaiting tactical commands.</div>
-    </div>
-
-    <!-- ==================================================================== -->
-    <!-- INTERACTION LOGIC CONTROL SCRIPT ENGINE                              -->
-    <!-- ==================================================================== -->
-    <script>
+                <button type="button" class="trek-capsule-btn" onclick="executeTransaction('SEND')">SEND FUNDS</button>
+                <button type="button" class="trek-capsule-btn" onclick="executeTransaction('SELL')">SELL / LIQUIDATE</button>
