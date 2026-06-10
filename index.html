@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SWAP-V1 // AUTO ACCESS DECK</title>
+    <title>SWAP-V1 // TRANSWARP MASTER CONSOLE</title>
     <style>
-        /* --- MINIMALIST DEFENSE DESIGN SYSTEM --- */
+        /* --- PURE BLACK MINIMALIST DESIGN MATRIX --- */
         body {
             background-color: #000000; /* Pure Pitch Black */
             color: #FFFFFF;           /* Base Text in Scannable White */
@@ -16,22 +16,18 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* --- RED & WHITE COLOR ASSIGNMENTS --- */
+        /* --- RED & WHITE COLOR FLAGS --- */
         .txt-white { color: #FFFFFF; }
         .txt-red { color: #FF3333; font-weight: bold; text-shadow: 0 0 3px rgba(255, 51, 51, 0.4); }
         .txt-dim { color: #777777; font-size: 11px; }
 
         /* --- LAYOUT WRAPPERS --- */
         .page-container {
-            display: none;
             max-width: 500px;
             margin: 0 auto;
         }
-        .active-page {
-            display: block !important;
-        }
 
-        /* --- BRAND IDENTIFIER SYSTEM HEADER --- */
+        /* --- SYSTEM COMMAND HEADER --- */
         .console-header {
             border-bottom: 2px solid #FF3333;
             padding-bottom: 12px;
@@ -47,7 +43,7 @@
             letter-spacing: 1px;
         }
 
-        /* --- STRUCTURED FORM CONTAINER PODS --- */
+        /* --- STRUCTURED CARD MODULES --- */
         .data-card {
             border: 1px solid #333333;
             background-color: #000000;
@@ -67,7 +63,7 @@
             word-break: break-all;
         }
 
-        /* --- INTERACTIVE TEXT CHANNELS (INPUTS) --- */
+        /* --- INTERACTIVE DROPDOWNS & REGISTERS --- */
         .console-input {
             width: 100%;
             background-color: #000000;
@@ -79,15 +75,13 @@
             box-sizing: border-box;
             margin-bottom: 18px;
             border-radius: 4px;
-            text-align: center;
-            letter-spacing: 4px;
         }
         .console-input:focus {
             outline: none;
             border-color: #FFFFFF;
         }
 
-        /* --- FIXED TACTICAL CAPSULE BUTTONS --- */
+        /* --- STAR TREK STYLE CAPSULE CONTROL BUTTONS --- */
         .trek-capsule-btn {
             display: block;
             width: 100%;
@@ -99,11 +93,15 @@
             font-size: 14px;
             font-weight: bold;
             letter-spacing: 2px;
-            border-radius: 25px; 
+            border-radius: 25px; /* Distinctive LCARS Curve Perimeter */
             cursor: pointer;
             text-transform: uppercase;
             box-sizing: border-box;
             text-align: center;
+        }
+        .trek-capsule-btn:active {
+            background-color: #FF3333 !important;
+            color: #000000 !important;
         }
 
         .btn-layout-grid {
@@ -117,7 +115,7 @@
             height: 46px;
         }
 
-        /* --- TELEMETRY READOUT MODULE --- */
+        /* --- TELEMETRY TERMINAL OUTPUT LOG --- */
         .terminal-readout {
             border: 1px dashed #FF3333;
             padding: 10px;
@@ -131,69 +129,43 @@
 <body>
 
     <!-- ==================================================================== -->
-    <!-- PAGE 1: AUTOMATED BIOMETRIC ENTRY RADAR (LOGIN)                     -->
+    <!-- DIRECT ENTRY DECK VIEW (LOGIN STAGE BYPASSED ENTIRELY)              -->
     <!-- ==================================================================== -->
-    <div id="pageLogin" class="page-container active-page">
+    <div class="page-container">
         <div class="console-header">
             <div>
-                <span class="txt-dim">QUANTUM SYSTEM OVERLAY</span>
-                <h1 class="header-main-title txt-white">SWAP-V1 // SCAN</h1>
+                <span class="txt-dim">TRANSWARP ENGINE PROTOCOLS ACTIVE</span>
+                <h1 class="header-main-title txt-red">SWAP-V1 // COMMAND</h1>
             </div>
             <span class="txt-red">SD 2026.161</span>
         </div>
 
-        <div class="data-card" style="border-color: #FF3333; text-align: center;">
-            <p class="txt-red" style="margin-top:0; font-size:14px;">🛸 AUTOMATED BIOMETRIC MATRIX ACTIVE</p>
-            <p class="txt-dim" style="line-height:1.4;">Type your access passcode pin inside the node below. The scanner will process and authorize engagement immediately upon digit matching.</p>
-            
-            <label class="card-label txt-white" style="margin-top:24px; text-align: left;">INPUT 4-6 DIGIT AUTHORIZATION KEY:</label>
-            
-            <!-- RE-BUILT AUTO-FIRE DETECTOR FIELD -->
-            <input type="tel" id="accessPin" class="console-input" placeholder="••••" maxlength="6" oninput="checkMatrixInputCode()">
-            
-            <p id="biometricStatus" class="txt-dim" style="font-size:10px; margin-top:16px; letter-spacing:1px; animation: blink 1s infinite alternate;">[ AWAITING INPUT PATTERN TELEMETRY ]</p>
-        </div>
-    </div>
-
-
-    <!-- ==================================================================== -->
-    <!-- PAGE 2: TRANSWARP ENGINE CONTROL DECK (SEND / RECEIVE / CONVERT)     -->
-    <!-- ==================================================================== -->
-    <div id="pageMain" class="page-container">
-        <div class="console-header">
-            <div>
-                <span class="txt-dim">SECTOR TRANS-LEDGER ACTIVE</span>
-                <h1 class="header-main-title txt-red">SWAP-V1 // COMMAND</h1>
-            </div>
-            <button type="button" class="trek-capsule-btn" style="width: auto; height:28px; padding:0 12px; border-radius:14px; font-size:9px;" onclick="terminateSession()">LOGOUT</button>
-        </div>
-
-        <!-- SENDER SECTOR MATRIX (GERMANY BANK) -->
+        <!-- TRADITIONAL FIAT RAIL CARD (GERMANY SEPA INFRASTRUCTURE) -->
         <div class="data-card">
-            <span class="txt-red card-label">[ SENDER CORE REGISTRY ]</span>
+            <span class="txt-red card-label">[ SENDER BANK CORE REGISTRY ]</span>
             
-            <span class="txt-dim card-label">BANK OR SYSTEM ENTITY NAME:</span>
-            <div class="card-data-field txt-white" id="lblBankName">DEUTSCHE STARFLEET CLEARING BANK</div>
+            <span class="txt-dim card-label">CLEARING BANK ENTITY IDENTITY NAME:</span>
+            <div class="card-data-field txt-white">DEUTSCHE STARFLEET CLEARING BANK</div>
             
-            <span class="txt-dim card-label">SENDER MATRIX ROUTING ID (GERMAN IBAN):</span>
-            <div class="card-data-field txt-white" id="lblBankIban">DE89 3704 0044 1234 5678 90</div>
+            <span class="txt-dim card-label">SENDER ROUTING CORE (GERMAN IBAN):</span>
+            <div class="card-data-field txt-white">DE89 3704 0044 1234 5678 90</div>
             
-            <span class="txt-dim card-label">LIQUID EURO CAPACITY:</span>
+            <span class="txt-dim card-label">LIQUID CASH RESERVES CAPACITY:</span>
             <div class="balance-text txt-white"><span id="valEur">4,250.00</span> EUR</div>
         </div>
 
-        <!-- ALPHA QUADRANT MULTI-WALLET BLOCKCHAIN STORAGE VAULT -->
+        <!-- WEb3 BLOCKCHAIN DEPOSIT GRID (3 DISTINCT USER WALLETS) -->
         <div class="data-card" style="border-color: #FF3333;">
-            <span class="txt-red card-label">[ ALPHA QUADRANT BLOCKCHAIN VAULT ]</span>
+            <span class="txt-red card-label">[ MULTI-ASSET BLOCKCHAIN STORAGE VAULT ]</span>
             
-            <span class="txt-dim card-label">ROUTED BLOCKCHAIN NETWORK REPRINTS (3 DISTINCT WALLETS):</span>
+            <span class="txt-dim card-label">VERIFIED ASSIGNED NODE TARGET ADDRESSES:</span>
             <div class="card-data-field txt-white" style="font-size:10px; line-height:1.4; margin-bottom:16px;">
-                BTC : <span id="addrBtc" class="txt-red">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span><br>
-                ETH : <span id="addrEth" class="txt-red">0x71C2496A24433333333333333333333333F2B297</span><br>
-                SOL : <span id="addrSol" class="txt-red">GvDe76Pq9Zfgdfgjhksdfg88234jkhsdfgNmsdf1</span>
+                BTC VAULT : <span class="txt-red">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span><br>
+                ETH VAULT : <span class="txt-red">0x71C2496A24433333333333333333333333F2B297</span><br>
+                SOL VAULT : <span class="txt-red">GvDe76Pq9Zfgdfgjhksdfg88234jkhsdfgNmsdf1</span>
             </div>
 
-            <span class="txt-dim card-label">DIGITAL QUANTUM ASSET LEDGER:</span>
+            <span class="txt-dim card-label">ACTIVE CRYPTOCURRENCY QUANTUM TELEMETRY:</span>
             <div class="card-data-field txt-white" style="margin-bottom:0; font-size: 13px; line-height: 1.5;">
                 🪙 BTC: <span id="valBtc">0.0650</span> BTC <span class="txt-dim">(≈ $4,016.54)</span><br>
                 🔷 ETH: <span id="valEth">1.4580</span> ETH <span class="txt-dim">(≈ $2,336.19)</span><br>
@@ -203,23 +175,63 @@
             </div>
         </div>
 
-        <!-- TRANSWARP TRANSACTION CONTROL CONSOLE -->
+        <!-- TRANSWARP TRANSACTION UTILITY BRIDGE ENGINE -->
         <div class="data-card">
             <span class="txt-red card-label">[ SYSTEM TRANSACTION DESK ]</span>
             
             <label class="card-label txt-white">1. SELECT TARGET ASSET ROUTE:</label>
-            <select id="assetSelect" class="console-input" style="background-color: #000000; color: #FFFFFF; letter-spacing:0px; text-align:left;">
+            <select id="assetSelect" class="console-input" style="background-color: #000000; color: #FFFFFF;">
                 <option value="EUR">EURO LIQUID CASH (EUR)</option>
                 <option value="BTC">BITCOIN TOKENS (BTC)</option>
                 <option value="ETH">ETHEREUM VALUATION (ETH)</option>
                 <option value="SOL">SOLANA HIGH FREQUENCY (SOL)</option>
             </select>
 
-            <label class="card-label txt-white">2. VOLUME TO TRANSFER / SELL (SEND AMOUNT):</label>
-            <input type="number" id="txAmount" class="console-input" placeholder="0.00" min="0" style="letter-spacing:0px; text-align:left;">
+            <label class="card-label txt-white">2. TRANSACTION OR LIQUIDATION VOLUME (SEND AMOUNT / SELLING VALUE):</label>
+            <input type="number" id="txAmount" class="console-input" placeholder="0.00" min="0">
 
-            <label class="card-label txt-white">3. TARGET DESTINATION (RECEIVER ADDRESS / PROMPTPAY ID):</label>
-            <input type="text" id="txTarget" class="console-input" placeholder="Enter Proxy Phone, IBAN, or Hash ID" style="letter-spacing:0px; text-align:left;">
+            <label class="card-label txt-white">3. TARGET TRANSACTION ENDPOINT ID (RECEIVER ADDRESS / PROMPTPAY PROXY):</label>
+            <input type="text" id="txTarget" class="console-input" placeholder="Enter Proxy Phone, IBAN, or Hash ID">
 
             <div class="btn-layout-grid">
                 <button type="button" class="trek-capsule-btn" onclick="executeTransaction('SEND')">SEND FUNDS</button>
+                <button type="button" class="trek-capsule-btn" onclick="executeTransaction('SELL')">SELL / LIQUIDATE</button>
+            </div>
+        </div>
+
+        <!-- TELEMETRY ACTION FEEDBACK LOG PANEL -->
+        <div class="terminal-readout txt-red" id="consoleLog">SYSTEM MONITOR: Connected. Core command grid active.</div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- ACCOUNTING LEDGER ENGINE SIMULATOR SCRIPT                           -->
+    <!-- ==================================================================== -->
+    <script>
+        function executeTransaction(actionType) {
+            const assetSelected = document.getElementById('assetSelect').value;
+            const amountInput = parseFloat(document.getElementById('txAmount').value);
+            const targetDestination = document.getElementById('txTarget').value;
+
+            if (isNaN(amountInput) || amountInput <= 0) {
+                printLog("ERROR: PROCESSING FAULT. QUANTUM INPUT REJECTED.");
+                return;
+            }
+
+            if (!targetDestination && actionType === 'SEND') {
+                printLog("ERROR: SECURE PATHWAY ROUTE IDENTIFIER PIN REQUIRED.");
+                return;
+            }
+
+            if (actionType === 'SEND') {
+                printLog(`DISCHARGED ${amountInput} ${assetSelected} TO LAYER REGISTRY: ${targetDestination}.`);
+                deductLocalBalance(assetSelected, amountInput);
+            } else if (actionType === 'SELL') {
+                printLog(`LIQUIDATED ${amountInput} ${assetSelected} INTO CENTRAL LIQUIDITY POOLS.`);
+                deductLocalBalance(assetSelected, amountInput);
+            }
+            
+            document.getElementById('txAmount').value = "";
+        }
+
+        function deductLocalBalance(asset, val) {
+            if(asset === "EUR") {
