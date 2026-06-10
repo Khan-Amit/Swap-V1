@@ -1,23 +1,61 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
+# ====================================================================
+#   SWAP-V1 // TRANSWARP LAYER SECURITY EXCLUSIONS DEFENSES
+# ====================================================================
+
+# --- SYSTEM & HARDWARE RECON READOUTS ---
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Log.txt
+*.log
+*.subspace
+
+# --- PYTHON WALLET LEDGER CACHE ENGINE (backend/) ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- MOBILE CONSOLE TARGET PACKAGES (mobile/) ---
+node_modules/
+.npm/
+.yarn/
+dist/
+build/
+.expo/
+*.jks
+*.p12
+*.key
+*.mobileprovision
+
+# --- CRITICAL ANTIMATTER SECURITY EMBED SECRETS (NEVER COMMITTED) ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.pub
+secret_token.txt
+jwt_rsa_priv.key
+
+# --- IDE CONSOLE LAYOUT PREFERENCES ---
 .vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
-.output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-files
-*.bclicense
-*.flf
-#Test results file
-TestResults.xml
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
