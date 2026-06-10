@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAP-V1 // TRANSWARP ENGINE</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 16px;
+        }
+        .lcars-header {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 24px;
+        }
+        .lcars-bar-left {
+            width: 35px;
+            height: 60px;
+            background-color: #99CCFF;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            margin-right: 6px;
+        }
+        .system-title {
+            flex: 1;
+        }
+        .system-sub-text {
+            color: #99CCFF;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+        .system-title-text {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .lcars-bar-right {
+            height: 40px;
+            background-color: #FF9900;
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            color: #000000;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .panel {
+            display: flex;
+            background-color: #111122;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            border: 1px solid #333355;
+        }
+        .panel-indicator {
+            width: 12px;
+        }
+        .panel-body {
+            flex: 1;
+            padding: 16px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #222244;
+            padding-bottom: 6px;
+        }
+        .section-header {
+            color: #8888AA;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .status-text {
+            color: #00FF00;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        .label {
+            color: #666688;
+            font-size: 9px;
+            margin-top: 8px;
+        }
+        .value-text {
+            font-size: 15px;
+        }
+        .account-number {
+            color: #00FFFF;
+            font-size: 14px;
+        }
+        .balance-text {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+        .bridge {
+            text-align: center;
+            padding: 8px;
+            background-color: #001133;
+            border: 1px solid #002266;
+            border-radius: 4px;
+            color: #00FFFF;
+            font-size: 11px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LCARS SYSTEM HEADER -->
+    <div class="lcars-header">
+        <div class="lcars-bar-left"></div>
+        <div class="system-title">
+            <div class="system-sub-text">SUB-SPACE QUANTUM NETWORK</div>
+            <h1 class="system-title-text">SWAP-V1 // TRANSWARP ENGINE</h1>
+        </div>
+        <div class="lcars-bar-right">SD 2026.161</div>
+    </div>
+
+    <!-- SENDER PROFILE -->
+    <div class="panel">
+        <div class="panel-indicator" style="background-color: #FF9900;"></div>
+        <div class="panel-body">
+            <div class="row">
+                <span class="section-header">[ SENDER PROFILE / SECTOR 01 ]</span>
+                <span class="status-text">FEDERATION_VERIFIED</span>
+            </div>
+            <div class="label">IDENTITY NAME:</div>
+            <div class="value-text">CADET JANE DOE</div>
+            <div class="label">ROUTING ROUTE (IBAN):</div>
+            <div class="account-number">DE89 3704 0044 1234 5678 90</div>
+            <div class="label">LIQUID ENERGY RESERVES:</div>
+            <div class="balance-text" style="color: #FF9900;">4,250.00 EUR</div>
+        </div>
+    </div>
+
+    <!-- SUB-SPACE BRIDGE VISUAL -->
+    <div class="bridge">🛸 SUBSYSTEM BRIDGE ENGAGED // EUR ➡️ THB</div>
+
+    <!-- RECEIVER PROFILE -->
+    <div class="panel">
+        <div class="panel-indicator" style="background-color: #CC6699;"></div>
+        <div class="panel-body">
+            <div class="row">
+                <span class="section-header">[ RECEIVER PROFILE / DELTA QUADRANT ]</span>
+                <span class="status-text">SECTOR_ACTIVE</span>
+            </div>
+            <div class="label">DESTINATION NAME:</div>
+            <div class="value-text">CADET JANE DOE</div>
+            <div class="label">PROMPTPAY MATRIX ID:</div>
+            <div class="account-number">081-234-5678 (THAI BANK)</div>
+            <div class="label">LOCAL SYSTEM CURRENCY:</div>
+            <div class="balance-text" style="color: #CC6699;">15,800.00 THB</div>
+        </div>
+    </div>
+
+</body>
+</html>
