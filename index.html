@@ -149,10 +149,33 @@
             margin-top: 2px;
             word-break: break-all;
         }
-        .balance-text {
-            font-size: 26px;
+
+        /* --- CRYPTO LEDGER EXPANDED SUB-MATRIX --- */
+        .crypto-asset-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding: 6px 0;
+            border-bottom: 1px dashed #1a1a33;
+        }
+        .crypto-asset-row:last-child {
+            border-bottom: none;
+        }
+        .crypto-ticker {
+            font-size: 13px;
             font-weight: bold;
-            margin-top: 4px;
+        }
+        .crypto-amount {
+            font-size: 17px;
+            font-weight: bold;
+            text-align: right;
+        }
+        .crypto-fiat-val {
+            font-size: 11px;
+            color: #8888AA;
+            display: block;
+            font-weight: normal;
         }
 
         /* --- INTER-SECTOR BRIDGE VISUAL --- */
@@ -173,15 +196,15 @@
             display: flex;
             justify-content: space-between;
             margin-top: 24px;
-            gap: 12px;
+            gap: 6px;
         }
         .trekky-btn {
             flex: 1;
             height: 48px;
             border: none;
-            border-radius: 24px; /* Distinctive LCARS Capsule Shape */
+            border-radius: 24px;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: bold;
             color: #000000;
             cursor: pointer;
@@ -250,45 +273,33 @@
         </div>
     </div>
 
-    <!-- NEW: ALPHA QUADRANT CRYPTO VAULT POD -->
+    <!-- EXPANDED: MULTI-CRYPTO BLOCKCHAIN VAULT POD -->
     <div class="panel">
         <div class="panel-indicator" style="background-color: #00FFFF;"></div>
         <div class="panel-body">
             <div class="row">
                 <span class="section-header">[ BLOCKCHAIN VAULT / ALPHA QUADRANT ]</span>
-                <span class="status-text" style="color:#00FFFF; background-color:rgba(0,255,255,0.1);">NODE_CONNECTED</span>
+                <span class="status-text" style="color:#00FFFF; background-color:rgba(0,255,255,0.1);">NODES_ACTIVE</span>
             </div>
             
-            <div class="label">WEB3 STORAGE MATRIX ID (WALLET ADDRESS):</div>
-            <div class="account-number" style="color: #99CCFF;">0x71C...B297 (ERC-20 NETWORK)</div>
-            
-            <div class="label">DIGITAL QUANTUM TOKEN HOLDINGS:</div>
-            <div class="balance-text" style="color: #00FFFF;">1.458 ETH <span style="font-size:14px; color:#8888AA;">($3,645.50 USD)</span></div>
-        </div>
-    </div>
-
-    <!-- SUB-SPACE LINK TUNNEL -->
-    <div class="bridge">🖖 TRANSWARP CONDUIT STABLE // EUR ➡️ THB</div>
-
-    <!-- RECEIVER PROFILE (THAILAND) -->
-    <div class="panel">
-        <div class="panel-indicator" style="background-color: #CC6699;"></div>
-        <div class="panel-body">
-            <div class="row">
-                <span class="section-header">[ RECEIVER PROFILE / DELTA QUADRANT ]</span>
-                <span class="status-text" style="color:#CC6699; background-color:rgba(204,102,153,0.1);">SECTOR_ACTIVE</span>
+            <div class="label">WEB3 STORAGE MATRIX NETWORKS:</div>
+            <div class="account-number" style="color: #99CCFF; font-size: 10px; line-height: 1.4; margin-bottom: 8px;">
+                BTC : 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa<br>
+                EVM : 0x71C2496A24433333333333333333333333F2B297<br>
+                SOL : GvDe76Pq9Zfgdfgjhksdfg88234jkhsdfgNmsdf1
             </div>
             
-            <div class="label">DESTINATION NAME:</div>
-            <div class="value-text">YOUR NAME HERE</div>
+            <div class="label">DIGITAL QUANTUM ASSET LEDGER:</div>
             
-            <div class="label">PROMPTPAY MATRIX ID (THAI ACCOUNT):</div>
-            <div class="account-number">081-234-5678</div>
-            
-            <div class="label">LOCAL SYSTEM CURRENCY:</div>
-            <div class="balance-text" style="color: #CC6699;">15,800.00 THB</div>
-        </div>
-    </div>
+            <!-- BITCOIN ROW -->
+            <div class="crypto-asset-row">
+                <div class="crypto-ticker" style="color: #FF9900;">🪙 BTC (BITCOIN)</div>
+                <div class="crypto-amount">
+                    0.0650 BTC
+                    <span class="crypto-fiat-val">≈ $4,016.54 USD</span>
+                </div>
+            </div>
 
-    <!-- INTERACTIVE TREKKY CONTROL BUTTONS -->
-    <div class="control-grid">
+            <!-- ETHEREUM ROW -->
+            <div class="crypto-asset-row">
+                <div class="crypto-ticker" style="color: #A0A0FF;">🔷 ETH (ETHEREUM)</div>
