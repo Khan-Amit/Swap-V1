@@ -143,7 +143,7 @@
         }
         .account-number {
             color: #00FFFF;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             letter-spacing: 1px;
             margin-top: 2px;
@@ -181,7 +181,7 @@
             border: none;
             border-radius: 24px; /* Distinctive LCARS Capsule Shape */
             font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
             color: #000000;
             cursor: pointer;
@@ -196,6 +196,7 @@
         .btn-blue { background-color: #3366CC; }
         .btn-orange { background-color: #FF9900; }
         .btn-pink { background-color: #CC6699; color: #FFFFFF; }
+        .btn-cyan { background-color: #00FFFF; }
 
         /* --- CONSOLE LOG OUTPUT TERMINAL --- */
         .terminal-log {
@@ -214,7 +215,7 @@
 
     <!-- MASSIVE SPACESHIP VISUAL HEADER -->
     <div class="spaceship-viewport">
-        <div class="warp-field-lines">&lt;&lt;&lt; WARP BRIDGE SPEED SECURED &gt;&gt;&gt;</div>
+        <div class="warp-field-lines">&lt;&lt;&lt; MULTI-ASSET MATRIX ACTIVE &gt;&gt;&gt;</div>
         <div class="spaceship-art">🛸💨✨</div>
         <div class="system-sub-text" style="color: #00FFFF; margin-top: 6px;">USS ENTERPRISE // NCC-1701-E</div>
     </div>
@@ -239,13 +240,30 @@
             </div>
             
             <div class="label">IDENTITY NAME:</div>
-            <div class="value-text">YOUR NAME HERE</div> <!-- ⬅️ EDIT YOUR NAME HERE -->
+            <div class="value-text">YOUR NAME HERE</div>
             
             <div class="label">ROUTING ROUTE (GERMAN IBAN):</div>
-            <div class="account-number">DE89 3704 0044 1234 5678 90</div> <!-- ⬅️ EDIT YOUR GERMAN IBAN HERE -->
+            <div class="account-number">DE89 3704 0044 1234 5678 90</div>
             
             <div class="label">LIQUID ENERGY RESERVES:</div>
             <div class="balance-text" style="color: #FF9900;">4,250.00 EUR</div>
+        </div>
+    </div>
+
+    <!-- NEW: ALPHA QUADRANT CRYPTO VAULT POD -->
+    <div class="panel">
+        <div class="panel-indicator" style="background-color: #00FFFF;"></div>
+        <div class="panel-body">
+            <div class="row">
+                <span class="section-header">[ BLOCKCHAIN VAULT / ALPHA QUADRANT ]</span>
+                <span class="status-text" style="color:#00FFFF; background-color:rgba(0,255,255,0.1);">NODE_CONNECTED</span>
+            </div>
+            
+            <div class="label">WEB3 STORAGE MATRIX ID (WALLET ADDRESS):</div>
+            <div class="account-number" style="color: #99CCFF;">0x71C...B297 (ERC-20 NETWORK)</div>
+            
+            <div class="label">DIGITAL QUANTUM TOKEN HOLDINGS:</div>
+            <div class="balance-text" style="color: #00FFFF;">1.458 ETH <span style="font-size:14px; color:#8888AA;">($3,645.50 USD)</span></div>
         </div>
     </div>
 
@@ -258,14 +276,14 @@
         <div class="panel-body">
             <div class="row">
                 <span class="section-header">[ RECEIVER PROFILE / DELTA QUADRANT ]</span>
-                <span class="status-text" style="color:#00FFFF; background-color:rgba(0,255,255,0.1);">SECTOR_ACTIVE</span>
+                <span class="status-text" style="color:#CC6699; background-color:rgba(204,102,153,0.1);">SECTOR_ACTIVE</span>
             </div>
             
             <div class="label">DESTINATION NAME:</div>
-            <div class="value-text">YOUR NAME HERE</div> <!-- ⬅️ EDIT YOUR NAME HERE AGAIN -->
+            <div class="value-text">YOUR NAME HERE</div>
             
             <div class="label">PROMPTPAY MATRIX ID (THAI ACCOUNT):</div>
-            <div class="account-number">081-234-5678</div> <!-- ⬅️ EDIT YOUR THAI PROMPTPAY NUMBER HERE -->
+            <div class="account-number">081-234-5678</div>
             
             <div class="label">LOCAL SYSTEM CURRENCY:</div>
             <div class="balance-text" style="color: #CC6699;">15,800.00 THB</div>
@@ -274,18 +292,3 @@
 
     <!-- INTERACTIVE TREKKY CONTROL BUTTONS -->
     <div class="control-grid">
-        <button class="trekky-btn btn-blue" onclick="logAction('SCANNING TARGET QR... MERCHANT LINK ACQUIRED!')">SCAN QR</button>
-        <button class="trekky-btn btn-orange" onclick="logAction('INITIATING FX WARP EXCHANGE... EUR LOCKED!')">FX WARP</button>
-        <button class="trekky-btn btn-pink" onclick="logAction('ENGAGING PAYMENTS MATRIX... FUNDS SENT!')">PAY NOW</button>
-    </div>
-
-    <!-- SUB-BRIDGE ACTION TERMINAL DISPLAY -->
-    <div class="terminal-log" id="termLog">MAIN CONSOLE: Systems standby. Ready for command, Captain.</div>
-
-    <script>
-        // Interactive Audio-Visual feedback engine simulator
-        function logAction(message) {
-            const logBox = document.getElementById('termLog');
-            logBox.style.color = '#00FF00';
-            logBox.innerText = "COMMAND STATUS: " + message;
-            
